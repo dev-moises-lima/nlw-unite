@@ -1,0 +1,140 @@
+/* Cascading StyleSheet */
+
+/* importando fontes do fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400; 1.500;1.700;1.900&family=Tangerina&display=swap');
+
+/* tira alguns estilos predefinidos pelo navegador usando o seletor universal (*) */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* define que a largura sera calculada de borda a borda (conteúdo mais padding mais border mais margin */
+}
+
+/* usando seletor raiz(root) para criar variáveis css */
+:root{
+    --border: 1px solid #ffffff1a; /* use -- no nome da variável e atribua o seu valor colocando : seguido do valor correspondente que deseja colocar na variável*/
+}
+
+body, table, input, button{
+    font: 300 16px/140% 'Roboto', sans-serif; /* 300 é o peso da fonte, /140% é o tamanho da linha, 'Roboto' , sans-serif significa que se a fonte Roboto não for encontrada será usada a fonte sans-serif */
+}
+
+body{
+    background-color: #121214; /* declarações -> propriedade: valor*/
+    color: white;
+}
+
+.container{
+  max-width: 690px; /* indica que a largura máxima é 500px */
+  margin: 0 auto; /* indica que a margem na vertical é 0 mas que a horizontal se adapta a largura da janela fazendo a margem esquerda ter o mesmo tamanho da margem direita*/
+  padding: 20px 32px;
+}
+
+header{
+    padding: 20px 0;
+}
+
+form{
+   border: var(--border); /* aplica bordas em todos os lados do formulário */
+   border-inline: none; /* tira as bordas laterais */
+    /* OBS: preste atenção na ordem das instruções se as inverter primeiro será tirada as bordas laterais, mas, logo em seguida, seria colocada as bordas em todos os lador do elemento */
+    padding: 20px 0;
+}
+
+fieldset{
+    border: none; /* remove a borda do elemento fieldset*/
+}
+
+/* fildset > div é o seletor que corresponde ao primeiro nível de div do elemento*/
+fieldset > div{
+    display: flex; /* alinha os elementos filhos */
+    gap: 12px; /* separa os elementos filhos numa distância de 12px */
+}
+
+/* seletor de classe */
+.input-wrapper{
+    flex: 1;
+    display: flex;
+    align-items: center; /* alinha os elementos na vertical */
+    gap: 12px;
+    border: var(--border);
+    border-radius: 10px; /*arredonda as bordas*/
+    padding: 8px 12px;
+    font: 400 14px/150% 'Roboto', sans-serif;
+    color: #c4c4cc;
+}
+
+input{
+    all: unset;
+}
+
+fieldset legend, section h2{
+    font: 700 16px/140% 'Roboto', sans-serif;
+    color: #e1e1e6;
+    padding-bottom: 16px;
+}
+
+fieldset button{
+    width: fit-content; /* usado para encaixar no conteúdo */
+    border: 0;
+    background: #f48f56;
+    border-radius: 10px;
+    padding: 7px 20px;
+    font: 700 12px/24px 'Roboto', sans-serif;
+    color: #00292e;
+}
+
+fieldset button:houver{
+    color: #f37c37;
+}
+
+.lista-participantes{
+    padding: 20px 0;
+}
+
+.lista-participantes > div{
+    border: var(--border);
+    border-radius: 10px;
+}
+
+table{
+    border-collapse: collapse; /* configura as bordas para se juntarem contrário de border-collapse: separate;*/
+}
+
+table thead{
+    font-size: 14px; /* tamanho da fonte */
+    line-height: 16px; /* altura da linha */
+}
+
+thead th, tbody td{
+    padding: 12px 16px; /* preenchimento de 12px em cima e em baixo e de 16px na esquerda e na direita*/
+}
+
+tbody td{
+    border-top: var(--border); /* borda apenas em cima no elemento de 1px branca solida; 1a no final é a opacidade da cor; se utiliza da variável --border para atribuir um valor a propriedade para isso é nescessário o uso da funçáo css var() que leva o nome da váriavel como argumento */
+    font-size: 13px;
+    line-height: 15px;
+    color: #c4c4cc;
+}
+
+tbody td strong{
+    color: white;
+    font-size: 14px
+    line-height: 16px;
+    font-weight: 600; /* peso da fonte */
+}
+
+tbody td small{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+tbody td button{
+    all: unset; /* tira todos os estilos colocados em algum momento antes da declaração */
+    color: #9ff9cc;
+}
+
+/* estilo que será aplicado quando o mause estiver em cima do elemento button */
+tbody td button:hover {
+    text-decoration: underline; /* coloca uma linha em baixo do texto(sublinhado)*/
+}
