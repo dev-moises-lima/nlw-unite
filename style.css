@@ -7,7 +7,7 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* define que a largura sera calculada de borda a borda (conteúdo mais padding mais border mais margin */
+    box-sizing: border-box; /* define que a largura será calculada de borda a borda (conteúdo mais padding mais border mais margin) */
 }
 
 /* usando seletor raiz(root) para criar variáveis css */
